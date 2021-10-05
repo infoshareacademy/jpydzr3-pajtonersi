@@ -1,0 +1,29 @@
+Persons:
+Aministrator
+Pracownik Rejestracji
+Technik Laboratorium
+Kierownik Laboratorium
+Lekarz
+Pacjent
+
+Modules:
+Zarządzanie użytkownikami
+Zarządzanie pacjentami
+Zarządzanie wizytami u lekarza
+Zarządzania kontem lekarza
+Zarządzanie badaniami
+Zarządzanie zleceniami
+Zarządzanie kontem online przez pacjenta
+
+Database:
+Uzytkownik systemowy:
+- ID uzytkownika
+- Imie
+- Nazwisko
+- PESEL
+- Data zatrudnienia
+- Stanowisko
+- Funkcja - from dropdown
+- Plec - from dropdown
+- Status konta - from dropdown
+- ID Dane kontaktowe
