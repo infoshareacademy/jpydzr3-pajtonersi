@@ -29,8 +29,7 @@ def credentials_check(credentials: tuple) -> object:
         elif dummy_admin_list.get(login):
             return dummy_admin_list.get(login)
         else:
-            print('Nie ma takiego użytkownika.')
-            credentials_check(credentials_input())
+            return None
 
     # TODO When we will switch to proper class objects reformat below code.
     def password_check(user: dict, password_given: str):
@@ -44,16 +43,19 @@ def credentials_check(credentials: tuple) -> object:
                 print('Udane logowanie')
                 return user
             else:
-                print('Niepoprawne hasło.')
-                credentials_check(credentials_input())
+                return None
 
     return password_check(login_check(credentials[0]), credentials[1])
 
 
-user = credentials_check(credentials_input())
-print(type(user))
-print(user)
-# TODO Step-by-step skeleton
-# Przekierowanie do odpowiedniego menu
-
-# TODO Kiedy podam zle dane logowania zapierwszym razem to funkcja zwraca None, sprawdź i napraw
+def log_in() -> object:
+    """
+    Checks the user name and password untill correct data provided.
+    :return: logged in user
+    """
+    while True:
+        logged_user = credentials_check(credentials_input())
+        if logged_user:
+            return logged_user
+        else:
+            print('Błędny login lub hasło')
