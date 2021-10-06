@@ -51,3 +51,7 @@ class User:
     def display_doctors_list(self):
         # TODO implement doctors list display
         pass
+
+    def display_doctors_availability(self):
+        # TODO implement doctors availability list
+        pass

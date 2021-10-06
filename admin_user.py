@@ -6,5 +6,26 @@ class Admin(User):
                  address: str):
         super().__init__(first_name, last_name, pesel, gender, phone_no, city, address)
 
+    def display_patient_list(self):
+        # TODO implement patient list display
+        pass
 
+    def add_user(self):
+        # TODO implement new user creation
+        pass
 
+    def edit_user(self):
+        # TODO implement user edition
+        pass
+
+    def display_user(self):
+        # TODO implement display user
+        pass
+
+    def delete_user(self):
+        # TODO implement user deletion
+        pass
+
+    def doctors_availability_setter(self):
+        # TODO implement doctors availability settings
+        pass
