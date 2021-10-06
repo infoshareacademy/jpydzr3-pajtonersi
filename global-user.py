@@ -26,11 +26,21 @@ class User:
         self.password = new_password
 
     def schedule_a_visit(self):
+        # TODO implement visit schedule
         pass
 
     def reschedule_a_visit(self):
+        # TODO implement visit re-schedule
         pass
 
     def cancel_a_visit(self):
+        # TODO implement visit cancelation
         pass
 
+    def sick_leave_list(self):
+        # TODO implement sick leave list
+        pass
+
+    def visit_list(self):
+        # TODO implement visit list display
+        pass
