@@ -1,12 +1,15 @@
 class User:
     idx_increment = 1
 
-    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str):
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, phone_no: str, city: str, address: str):
         self.user_idx = User.idx_increment
         self.first_name = first_name
         self.last_name = last_name
         self.pesel = pesel
         self.gender = gender
+        self.phone_no = phone_no
+        self.city = city
+        self.address = address
         self.username = self.first_name + '.' + self.last_name
         self.password = None
         User.idx_increment += 1
@@ -43,4 +46,8 @@ class User:
 
     def visit_list(self):
         # TODO implement visit list display
+        pass
+
+    def display_doctors_list(self):
+        # TODO implement doctors list display
         pass
