@@ -1,24 +1,16 @@
-class Receptionist:
-    number = 0
+from admin_user import Admin
 
-    def __init__(self, name, surname, login, password, pesel, hire_date, position, function, sex, account_status, street, city, postal_code, phone_number, email):
-        self.id = self.number
-        self.name = name
-        self.surname = surname
-        self.login = login
-        self.password = password
-        self.pesel = pesel
+class Receptionist(Admin):
+
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, phone_no: str, city: str,
+                 address: str, postal_code: str, email: str, hire_date: str, position: str, function: str,
+                 account_status: str):
+        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email)
         self.hire_date = hire_date
         self.position = position
         self.function = function
-        self.sex = sex
         self.account_status = account_status
-        self.street = street
-        self.city = city
-        self.postal_code = postal_code
-        self.phone_number = phone_number
-        self.email = email
-        Receptionist.number += 1
+
 
     def add_new_patient(self):
         print('Nowy pacjent został dodany.')
