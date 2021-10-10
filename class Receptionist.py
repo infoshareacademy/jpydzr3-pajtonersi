@@ -1,12 +1,12 @@
 class Receptionist:
     number = 0
-    def __init__(self, name, surname, login, password, PESEL, hire_date, position, function, sex, account_status, street, city, postal_code, phone_number, email):
+    def __init__(self, name, surname, login, password, pesel, hire_date, position, function, sex, account_status, street, city, postal_code, phone_number, email):
         self.id = self.number
         self.name = name
         self.surname = surname
         self.login = login
         self.password = password
-        self.PESEL = PESEL
+        self.pesel = pesel
         self.hire_date = hire_date
         self.position = position
         self.function = function
