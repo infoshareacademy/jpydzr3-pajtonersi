@@ -1,11 +1,11 @@
 class Pacjent:
     pacjent_number = 0
 
-    def __init__(self, name, surname, PESEL, password, login, gender, street, city, postal_code, phone_number, email, package_code):
+    def __init__(self, name, surname, pesel, password, login, gender, street, city, postal_code, phone_number, email, package_code):
         self.id = self.pacjent_number
         self.name = name
         self.surname = surname
-        self.PESEL = PESEL
+        self.pesel = pesel
         self.password = password
         self.login = login
         self.gender = gender
