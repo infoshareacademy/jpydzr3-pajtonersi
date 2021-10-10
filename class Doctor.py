@@ -1,5 +1,6 @@
 class Doctor:
     number = 0
+
     def __init__(self, name, surname, login, password, pesel, hire_date, position, function, sex, account_status,
                      street, city, postal_code, phone_number, email, specialty, location):
         self.id = self.number

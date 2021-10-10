@@ -1,21 +1,13 @@
-class Pacjent:
-    pacjent_number = 0
+from master_user import User
 
-    def __init__(self, name, surname, pesel, password, login, gender, street, city, postal_code, phone_number, email, package_code):
+
+class Pacjent(User):
+
+    def __init__(self, gender, city, email: str, package_code, first_name: str, last_name: str,
+                 phone_no: str, address: str, pesel: int, postal_code: str):
+        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email)
         self.id = self.pacjent_number
-        self.name = name
-        self.surname = surname
-        self.pesel = pesel
-        self.password = password
-        self.login = login
-        self.gender = gender
-        self.street = street
-        self.city = city
-        self.postal_code = postal_code
-        self.phone_number = phone_number
-        self.email = email
         self.package_code = package_code
-        Pacjent.pacjent_number += 1
 
     def change_password(self):
         print('Hasło zostało zmienione')
