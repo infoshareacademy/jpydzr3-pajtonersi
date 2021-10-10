@@ -2,7 +2,6 @@ from master_user import User
 
 
 class Pacjent(User):
-
     def __init__(self, gender, city, email: str, package_code, first_name: str, last_name: str,
                  phone_no: str, address: str, pesel: int, postal_code: str):
         super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email)
