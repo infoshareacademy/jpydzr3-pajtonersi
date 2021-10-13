@@ -1,0 +1,14 @@
+{
+    "Jarek": {
+        "password": "12345",
+        "general_status": "healthy"
+    },
+    "Adrian": {
+        "password": "0000",
+        "general_status": "healthy"
+    },
+    "Tomek": {
+        "password": "11111",
+        "general_status": "healthy"
+    }
+}
