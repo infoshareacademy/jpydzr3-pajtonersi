@@ -2,14 +2,9 @@ from admin_user import Admin
 
 class Receptionist(Admin):
 
-    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, phone_no: str, city: str,
-                 address: str, postal_code: str, email: str, hire_date: str, position: str, function: str,
-                 account_status: str):
-        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email)
-        self.hire_date = hire_date
-        self.position = position
-        self.function = function
-        self.account_status = account_status
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
+                 postal_code: str, phone_no: str, email: str, account_status: str, hire_date: str, position: str, function: str):
+        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email, account_status, hire_date, position, function)
 
 
     def add_new_patient(self):

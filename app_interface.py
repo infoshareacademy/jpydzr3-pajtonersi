@@ -1,4 +1,4 @@
-from class_pacjent import Pacjent
+from class_patient import Pacjent
 import login_screen
 
 
