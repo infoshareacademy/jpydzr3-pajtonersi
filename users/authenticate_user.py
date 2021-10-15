@@ -1,10 +1,12 @@
 from typing import Tuple
+from users.user_classes.class_patient import Patient
+from users.user_classes.class_doctor import Doctor
 
 # TODO Remove below lists when tests are over
-dummy_user_list = {'Jarek': {'password': '12345', 'general_status': 'healthy'},
-                   'Adrian': {'password': '1111', 'general_status': 'healthy'}}
-dummy_admin_list = {'Doktor': {'password': 'Quinn'},
-                    'Recepcja': {'password': 'recepcja1'}}
+dummy_user_list = [Patient('Jarek', 'Majka', 1, 'male', 'street', 'city', 'post-code',
+                           'phone number', 'email', 'active account', 'top-tier')]
+dummy_admin_list = [Doctor('Doctor', 'Quinn', 2, 'female', 'street', 'city', 'post-code', 'phone number', 'email',
+                           'active', 'today', 'general medic', 'doctor', 'general', 'here')]
 
 
 class UserAuthentication:
