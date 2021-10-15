@@ -3,7 +3,7 @@ from users.authenticate_user import UserAuthentication
 
 class UserServices:
     def __init__(self):
-        self.user = self.set_user()
+        self.__user = self.set_user()
 
     def set_user(self):
         return self.authenticate_user()
