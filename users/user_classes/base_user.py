@@ -15,7 +15,8 @@ class User:
         self.email = email
         self.account_status = account_status
         self.username = self.first_name + '.' + self.last_name
-        self.password = None
+        # TODO Remove below password assignment and create a setter
+        self.password = '13'
         User.idx_increment += 1
 
     def username_change(self, new_username: str) -> None:

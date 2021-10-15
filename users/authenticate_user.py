@@ -2,11 +2,11 @@ from typing import Tuple
 from users.user_classes.class_patient import Patient
 from users.user_classes.class_doctor import Doctor
 
-# TODO Remove below lists when tests are over
+# TODO Remove below list when tests are over
 dummy_user_list = [Patient('Jarek', 'Majka', 1, 'male', 'street', 'city', 'post-code',
-                           'phone number', 'email', 'active account', 'top-tier')]
-dummy_admin_list = [Doctor('Doctor', 'Quinn', 2, 'female', 'street', 'city', 'post-code', 'phone number', 'email',
-                           'active', 'today', 'general medic', 'doctor', 'general', 'here')]
+                           'phone number', 'email', 'active account', 'top-tier'),
+                   Doctor('Doctor', 'Quinn', 2, 'female', 'street', 'city', 'post-code', 'phone number', 'email',
+                          'active', 'today', 'general medic', 'doctor', 'general', 'here')]
 
 
 class UserAuthentication:
@@ -28,23 +28,20 @@ class UserAuthentication:
         If given login or password is incorrect prompts for input again.
         :param credentials: user log-in data retrieved from credentials_input() function
         """
-        def login_check(login: str) -> dict:
-            if dummy_user_list.get(login):
-                return dummy_user_list.get(login)
-            elif dummy_admin_list.get(login):
-                return dummy_admin_list.get(login)
-            else:
-                return None
+        def login_check(login: str) -> object:
+            for idx in range(len(dummy_user_list)):
+                if dummy_user_list[idx].username == login:
+                    return dummy_user_list[idx]
 
         # TODO When we will switch to proper class objects reformat below code.
-        def password_check(user: dict, password_given: str):
+        def password_check(user: object, password_given: str):
             """
             Returns user object
             :param user: object that needs to be validated if can be returned
             :param password_given: password provided by the user
             """
             if user:
-                if user['password'] == password_given:
+                if user.password == password_given:
                     print('Udane logowanie')
                     return user
                 else:
