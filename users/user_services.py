@@ -8,3 +8,6 @@ class UserServices:
     def authenticate_user(self) -> object:
         """Authenticates user and return instance of user object"""
         UserAuthentication()
+
+    def check_user_type(self, user: object):
+        pass
