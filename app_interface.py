@@ -1,6 +1,6 @@
-from users import login_screen
+from users import authenticate_user
 
 
 class AppInterface:
     def __init__(self):
-        login_screen.log_in()
+        authenticate_user.log_in()

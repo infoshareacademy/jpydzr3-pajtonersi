@@ -1,4 +1,4 @@
-from login_screen import UserAuthentication
+from authenticate_user import UserAuthentication
 
 
 class UserServices:
