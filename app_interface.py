@@ -1,5 +1,4 @@
-from class_pacjent import Pacjent
-import login_screen
+from users import login_screen
 
 
 class AppInterface:
