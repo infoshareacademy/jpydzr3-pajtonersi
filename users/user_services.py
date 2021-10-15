@@ -1,4 +1,4 @@
-from users.authenticate_user import UserAuthentication
+from users.authenticate_user import AuthenticateUser
 from users.user_classes.class_doctor import Doctor
 from users.user_classes.class_receptionist import Receptionist
 from users.user_classes.class_patient import Patient
@@ -7,12 +7,13 @@ from users.user_classes.class_patient import Patient
 class UserServices:
     def __init__(self):
         self.__user = self.set_user()
+        self.check_user_type(self.get_user())
 
     def set_user(self) -> object:
         """Setter for __user attribute"""
         def authenticated_user() -> object:
             """Authenticates user and returns instance of user object"""
-            return UserAuthentication()
+            return AuthenticateUser().get_user()
         return authenticated_user()
 
     def get_user(self):
