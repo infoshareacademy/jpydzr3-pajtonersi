@@ -22,9 +22,7 @@ class UserServices:
         return self.__user
 
     def print_menu(self, user):
-        if isinstance(user, Doctor):
+        if isinstance(user, (Doctor, Receptionist)):
             run_menu()
-        elif isinstance(user, Receptionist):
-            print('It\'s a Receptionist')
         elif isinstance(user, Patient):
             print('It\'s a Patient')

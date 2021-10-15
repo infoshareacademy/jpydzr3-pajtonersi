@@ -48,8 +48,7 @@ class AuthenticateUser:
                 """
                 if user:
                     if user.password == password_given:
-                        print('Udane logowanie')
-                        print(type(user))
+                        print(f'Udane logowanie. Dzień dobry {user.first_name}')
                         return user
                     else:
                         return None
