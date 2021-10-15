@@ -1,13 +1,16 @@
-from authenticate_user import UserAuthentication
+from users.authenticate_user import UserAuthentication
 
 
 class UserServices:
     def __init__(self):
-        pass
+        self.user = self.set_user()
+
+    def set_user(self):
+        return self.authenticate_user()
 
     def authenticate_user(self) -> object:
         """Authenticates user and return instance of user object"""
-        UserAuthentication()
+        return UserAuthentication()
 
-    def check_user_type(self, user: object):
+    def check_user_type(self):
         pass

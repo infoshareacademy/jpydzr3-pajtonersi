@@ -1,4 +1,4 @@
-from base_user import User
+from users.user_classes.base_user import User
 
 
 class Patient(User):

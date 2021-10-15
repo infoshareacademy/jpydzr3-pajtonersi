@@ -1,4 +1,4 @@
-from admin_user import Admin
+from users.user_classes.admin_user import Admin
 
 
 class Doctor(Admin):

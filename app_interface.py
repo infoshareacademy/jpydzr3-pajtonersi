@@ -1,6 +1,7 @@
-from users import authenticate_user
+from users.user_services import UserServices
+from users.authenticate_user import UserAuthentication
 
 
 class AppInterface:
     def __init__(self):
-        authenticate_user.log_in()
+        UserServices()
