@@ -2,6 +2,7 @@ import sys
 from enum import Enum
 
 
+# TODO Needs reformatting to class
 class ChoiceEnum(Enum):
     ADDING_PATIENT = 1
     BOOK_APPOINTMENT = 2
