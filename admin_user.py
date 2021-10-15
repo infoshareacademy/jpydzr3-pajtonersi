@@ -2,9 +2,12 @@ from master_user import User
 
 
 class Admin(User):
-    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, phone_no: str, city: str,
-                 address: str):
-        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address)
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
+                 postal_code: str, phone_no: str, email: str, account_status: str, hire_date: str, position: str, function: str):
+        super().__init__(first_name, last_name, pesel, gender, address, city, postal_code, phone_no, email, account_status)
+        self.hire_date = hire_date
+        self.position = position
+        self.function = function
 
     def display_patient_list(self):
         # TODO implement patient list display

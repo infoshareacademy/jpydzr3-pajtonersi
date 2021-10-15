@@ -1,15 +1,19 @@
 class User:
     idx_increment = 1
 
-    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, phone_no: str, city: str, address: str):
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
+                 postal_code: str, phone_no: str, email: str, account_status: str):
         self.user_idx = User.idx_increment
         self.first_name = first_name
         self.last_name = last_name
         self.pesel = pesel
         self.gender = gender
-        self.phone_no = phone_no
-        self.city = city
         self.address = address
+        self.city = city
+        self.postal_code = postal_code
+        self.phone_no = phone_no
+        self.email = email
+        self.account_status = account_status
         self.username = self.first_name + '.' + self.last_name
         self.password = None
         User.idx_increment += 1
