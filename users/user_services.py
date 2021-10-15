@@ -1,10 +1,10 @@
-import login_screen
+from login_screen import UserAuthentication
 
 
 class UserServices:
     def __init__(self):
         pass
 
-    def user_authentication(self) -> object:
+    def authenticate_user(self) -> object:
         """Authenticates user and return instance of user object"""
-        login_screen.log_in()
+        UserAuthentication()
