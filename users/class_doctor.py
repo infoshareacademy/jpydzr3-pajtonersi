@@ -3,8 +3,10 @@ from admin_user import Admin
 
 class Doctor(Admin):
     def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
-                 postal_code: str, phone_no: str, email: str, account_status: str, hire_date: str, position: str, function: str, specialty: str, location: str):
-        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email, account_status, hire_date, position, function)
+                 postal_code: str, phone_no: str, email: str, account_status: str,
+                 hire_date: str, position: str, function: str, specialty: str, location: str):
+        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email,
+                         account_status, hire_date, position, function)
         self.specialty = specialty
         self.location = location
 
