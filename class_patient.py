@@ -2,10 +2,10 @@ from master_user import User
 
 
 class Pacjent(User):
-    def __init__(self, gender, city, email: str, package_code, first_name: str, last_name: str,
-                 phone_no: str, address: str, pesel: int, postal_code: str):
-        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email)
-        self.package_code = package_code
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
+                 postal_code: str, phone_no: str, email: str, account_status: str, package):
+        super().__init__(first_name, last_name, pesel, gender,  address, city, postal_code, phone_no, email, account_status)
+        self.package = package
 
     def change_password(self):
         print('Hasło zostało zmienione')

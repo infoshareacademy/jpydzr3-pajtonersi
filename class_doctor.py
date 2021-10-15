@@ -1,27 +1,12 @@
-class Doctor:
-    number = 0
+from admin_user import Admin
 
-    def __init__(self, name, surname, login, password, pesel, hire_date, position, function, sex, account_status,
-                     street, city, postal_code, phone_number, email, specialty, location):
-        self.id = self.number
-        self.name = name
-        self.surname = surname
-        self.login = login
-        self.password = password
-        self.pesel = pesel
-        self.hire_date = hire_date
-        self.position = position
-        self.function = function
-        self.sex = sex
-        self.account_status = account_status
-        self.street = street
-        self.city = city
-        self.postal_code = postal_code
-        self.phone_number = phone_number
-        self.email = email
+
+class Doctor(Admin):
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
+                 postal_code: str, phone_no: str, email: str, account_status: str, hire_date: str, position: str, function: str, specialty: str, location: str):
+        super().__init__(first_name, last_name, pesel, gender, phone_no, city, address, postal_code, email, account_status, hire_date, position, function)
         self.specialty = specialty
         self.location = location
-        Doctor.number += 1
 
     def add_availability_to_calendar(self):
         print('Wizyta została dodana do kalendarza.')
