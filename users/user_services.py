@@ -2,12 +2,13 @@ from users.authenticate_user import AuthenticateUser
 from users.user_classes.class_doctor import Doctor
 from users.user_classes.class_receptionist import Receptionist
 from users.user_classes.class_patient import Patient
+from users.user_menus.admin_menu import run_menu
 
 
 class UserServices:
     def __init__(self):
         self.__user = self.set_user()
-        self.check_user_type(self.get_user())
+        self.print_menu(self.get_user())
 
     def set_user(self) -> object:
         """Setter for __user attribute"""
@@ -20,13 +21,10 @@ class UserServices:
         """Getter for __user attribute"""
         return self.__user
 
-    def check_user_type(self, user):
+    def print_menu(self, user):
         if isinstance(user, Doctor):
-            print('It\'s a Doctor')
+            run_menu()
         elif isinstance(user, Receptionist):
             print('It\'s a Receptionist')
         elif isinstance(user, Patient):
             print('It\'s a Patient')
-
-    def menu_printer(self):
-        pass
