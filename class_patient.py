@@ -1,4 +1,4 @@
-from master_user import User
+from base_user import User
 
 
 class Pacjent(User):
