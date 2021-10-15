@@ -39,8 +39,6 @@ def wyjscie():
 def run_options(decision):
     functions[decision]()
 
-def
-
 
 functions = {
     ChoiceEnum.ADDING_PATIENT.value: adding_a_patient,
