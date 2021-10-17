@@ -1,27 +1,18 @@
-class Pacjent:
-    pacjent_number = 0
+from users.user_classes.base_user import User
 
-    def __init__(self, name, surname, pesel, password, login, gender, street, city, postal_code, phone_number, email, package_code):
-        self.id = self.pacjent_number
-        self.name = name
-        self.surname = surname
-        self.pesel = pesel
-        self.password = password
-        self.login = login
-        self.gender = gender
-        self.street = street
-        self.city = city
-        self.postal_code = postal_code
-        self.phone_number = phone_number
-        self.email = email
-        self.package_code = package_code
-        Pacjent.pacjent_number += 1
+
+class Patient(User):
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
+                 postal_code: str, phone_no: str, email: str, account_status: str, package):
+        super().__init__(first_name, last_name, pesel, gender,  address, city,
+                         postal_code, phone_no, email, account_status)
+        self.package = package
 
     def change_password(self):
         print('Hasło zostało zmienione')
 
     def view_profile(self):
-        print('Profil pacjenta został wyświtlony')
+        print('Profil pacjenta został wyświetlony')
 
     def change_some_personal_data(self):
         print('Dane pacjenta zostały zmienione')
@@ -46,9 +37,3 @@ class Pacjent:
 
     def cancel_visit(self):
         print('Wizyta została odwołana')
-
-pacjent1 = Pacjent
-print(pacjent1)
-
-
-

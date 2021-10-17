@@ -1,6 +1,8 @@
 class Receptionist:
     number = 0
-    def __init__(self, name, surname, login, password, pesel, hire_date, position, function, sex, account_status, street, city, postal_code, phone_number, email):
+
+    def __init__(self, name, surname, login, password, pesel, hire_date, position,
+                 function, sex, account_status, street, city, postal_code, phone_number, email):
         self.id = self.number
         self.name = name
         self.surname = surname
@@ -42,6 +44,3 @@ class Receptionist:
 
     def remove_doctor_appointment(self):
         print('Wizyta lekarska została usunięta.')
-
-receptionist1 = Receptionist
-print(receptionist1)
