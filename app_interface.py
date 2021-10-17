@@ -1,7 +1,6 @@
-from class_patient import Pacjent
-import login_screen
+from users.user_services import UserServices
 
 
 class AppInterface:
     def __init__(self):
-        login_screen.log_in()
+        UserServices()

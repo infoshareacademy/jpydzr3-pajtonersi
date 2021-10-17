@@ -8,9 +8,6 @@ class User:
         self.pesel = pesel
         self.gender = gender
         self.phone_no = phone_no
-        self.city = city
-        self.address = address
-        self.password = None
         User.idx_increment += 1
 
     @property
