@@ -8,11 +8,19 @@ class User:
         self.pesel = pesel
         self.gender = gender
         self.phone_no = phone_no
-        self.city = city
-        self.address = address
-        self.username = self.first_name + '.' + self.last_name
-        self.password = None
         User.idx_increment += 1
+
+    @property
+    def username(self):
+        print('getting value...')
+        return self.first_name + '.' + self.last_name
+
+    @username.setter
+    def username(self, value):
+        print('setting value...')
+        first_name, last_name = value.split(" ")
+        self.first_name = first_name
+        self.last_name = last_name
 
     def username_change(self, new_username: str) -> None:
         """
@@ -55,3 +63,9 @@ class User:
     def display_doctors_availability(self):
         # TODO implement doctors availability list
         pass
+
+
+
+
+
+
