@@ -1,3 +1,5 @@
+import json
+
 class Receptionist:
     number = 0
 
@@ -22,7 +24,41 @@ class Receptionist:
         Receptionist.number += 1
 
     def add_new_patient(self):
-        print('Nowy pacjent został dodany.')
+        with open('db.json') as f:
+            users = json.dumps(f.read())
+
+            def authenticate_user():
+                login = input('Podaj imię pracownika recepcji:  ')
+                if users.get(login):
+                    password = input('Podaj hasło:  ')
+                    if users[login] == password:
+                        return login
+                    else:
+                        return False
+                else:
+                    return False
+            def tworzenie_klienta():
+                user_authenticated = False
+                while not user_authenticated:
+                    user_authenticated = authenticate_user()
+                    print(f'user_authenticated: {user_authenticated}')
+
+                if user_authenticated == 'admin':
+                    print('Wybierz co chciałbyś zrobić')
+                    print('1. Utwórz nowego pacjenta')
+
+                    option = input('Podaj numer opcji:  ')
+                    if option == '1':
+                        print(users)
+                        #tu podajesz nowy login i hasło
+                        login = input('podaj imię nowego pacjenta:  ')
+                        password = input('podaj hasło nowego pacjenta:  ')
+                        #dodanie informacji do bazy danych
+                        users[login] = password
+                        print(users)
+                        f.write(users)
+                tworzenie_klienta()
+            print('Nowy pacjent został dodany.')
 
     def edit_patient(self):
         print('Dane pacjenta zostały zmienione.')
