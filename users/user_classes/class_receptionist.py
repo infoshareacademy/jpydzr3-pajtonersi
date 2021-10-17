@@ -27,6 +27,7 @@ class Receptionist:
     def edit_patient(self):
         print('Dane pacjenta zostały zmienione.')
 
+
     def show_patient(self):
         print('Dane pacjenta zostały wyświetlone.')
 
