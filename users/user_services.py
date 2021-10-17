@@ -1,6 +1,5 @@
 from users.authenticate_user import AuthenticateUser
-from users.user_classes.class_doctor import Doctor
-from users.user_classes.class_receptionist import Receptionist
+from users.user_classes.admin_user import Admin
 from users.user_classes.class_patient import Patient
 from users.user_menus.admin_menu import run_menu
 
@@ -22,7 +21,7 @@ class UserServices:
         return self.__user
 
     def print_menu(self, user):
-        if isinstance(user, (Doctor, Receptionist)):
+        if isinstance(user, Admin):
             run_menu()
         elif isinstance(user, Patient):
             print('It\'s a Patient')
