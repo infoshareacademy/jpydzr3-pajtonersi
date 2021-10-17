@@ -1,6 +1,7 @@
 import sys
 from enum import Enum
 
+
 class ChoiceEnum(Enum):
     ADDING_PATIENT = 1
     BOOK_APPOINTMENT = 2
@@ -13,24 +14,31 @@ class ChoiceEnum(Enum):
 def adding_a_patient():
     print('Nowy pacjent dodany')
 
+
 def zaplanowanie_wizyty():
     print('Wizyta zaplanowana')
+
 
 def zaplanowanie_badania():
     print('Badanie zaplanowane')
 
+
 def doctors_availability_managment():
     print('Dostępność lakarza..')
 
+
 def medical_packages():
     print('Możliwe pakiety medyczne..')
+
 
 def wyjscie():
     print('Koniec programu.')
     sys.exit(0)
 
+
 def run_options(decision):
     functions[decision]()
+
 
 functions = {
     ChoiceEnum.ADDING_PATIENT.value: adding_a_patient,
@@ -50,10 +58,12 @@ def print_options():
     print('5. Wybierz pakiet medyczny')
     print('6. Wyjście z programu')
 
+
 def validate_decision(decision):
     ALLOWED_DECISIONS = [e.value for e in ChoiceEnum]
     if decision not in ALLOWED_DECISIONS:
         raise Exception(f"Liczba {decision} jest niedozwolona!")
+
 
 while True:
     print_options()
