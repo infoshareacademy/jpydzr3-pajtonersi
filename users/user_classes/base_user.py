@@ -1,23 +1,26 @@
 class User:
     idx_increment = 1
 
-    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
-                 postal_code: str, phone_no: str, email: str, account_status: str):
+    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, phone_no: str, city: str, address: str):
         self.user_idx = User.idx_increment
         self.first_name = first_name
         self.last_name = last_name
         self.pesel = pesel
         self.gender = gender
-        self.address = address
-        self.city = city
-        self.postal_code = postal_code
         self.phone_no = phone_no
-        self.email = email
-        self.account_status = account_status
-        self.username = self.first_name + '.' + self.last_name
-        # TODO Remove below password assignment and create a setter
-        self.password = '13'
         User.idx_increment += 1
+
+    @property
+    def username(self):
+        print('getting value...')
+        return self.first_name + '.' + self.last_name
+
+    @username.setter
+    def username(self, value):
+        print('setting value...')
+        first_name, last_name = value.split(" ")
+        self.first_name = first_name
+        self.last_name = last_name
 
     def username_change(self, new_username: str) -> None:
         """
@@ -60,3 +63,9 @@ class User:
     def display_doctors_availability(self):
         # TODO implement doctors availability list
         pass
+
+
+
+
+
+
