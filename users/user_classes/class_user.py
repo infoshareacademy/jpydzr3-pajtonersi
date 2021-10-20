@@ -15,7 +15,7 @@ class User:
         self.city = city
         self.zip_code = zip_code
         self.is_active = is_active
-        self._username = self.first_name + '.' + self.last_name
+        self._username = None
         User.idx_increment += 1
 
     @property
@@ -30,13 +30,6 @@ class User:
         print('setting value...')
         self._username = value
 
-
-    def username_change(self, new_username: str) -> None:
-        """
-        Changes default username for specified new one
-        :param new_username: new value of self.username
-        """
-        self.username = new_username
 
     def password_change(self, new_password: str) -> None:
         """
