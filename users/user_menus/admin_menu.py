@@ -1,8 +1,9 @@
 import sys
 from enum import Enum
 
+from users.user_repository import UserRepository
 
-# TODO Needs reformatting to class
+
 class ChoiceEnum(Enum):
     ADDING_PATIENT = 1
     BOOK_APPOINTMENT = 2
@@ -12,63 +13,58 @@ class ChoiceEnum(Enum):
     EXIT = 6
 
 
-def adding_a_patient():
-    print('Nowy pacjent dodany')
+class AdminMenu:
+    def __init__(self, user: object):
+        self.__user = user
+        self.__run_menu()
 
+    def __adding_a_patient(self):
+        UserRepository(self.__user).add_user()
 
-def zaplanowanie_wizyty():
-    print('Wizyta zaplanowana')
+    def __zaplanowanie_wizyty(self):
+        print('Wizyta zaplanowana')
 
+    def __zaplanowanie_badania(self):
+        print('Badanie zaplanowane')
 
-def zaplanowanie_badania():
-    print('Badanie zaplanowane')
+    def __doctors_availability_managment(self):
+        print('Dostępność lakarza..')
 
+    def __medical_packages(self):
+        print('Możliwe pakiety medyczne..')
 
-def doctors_availability_managment():
-    print('Dostępność lakarza..')
+    def __wyjscie(self):
+        print('Koniec programu.')
+        sys.exit(0)
 
+    def __run_options(self, decision):
+        AdminMenu.functions[decision](self)
 
-def medical_packages():
-    print('Możliwe pakiety medyczne..')
+    functions = {
+        ChoiceEnum.ADDING_PATIENT.value: __adding_a_patient,
+        ChoiceEnum.BOOK_APPOINTMENT.value: __zaplanowanie_wizyty,
+        ChoiceEnum.BOOK_STUDY.value: __zaplanowanie_badania,
+        ChoiceEnum.DOCTORS_AVAILABILITY.value: __doctors_availability_managment,
+        ChoiceEnum.MEDICAL_PACKAGES.value: __medical_packages,
+        ChoiceEnum.EXIT.value: __wyjscie,
+    }
 
+    def __print_options(self):
+        print('1. Dodaj użytkownika')
+        print('2. Zaplanuj wizyte')
+        print('3. Zaplanuj badanie')
+        print('4. Zarządzanie dostępnością lekarzy')
+        print('5. Wybierz pakiet medyczny')
+        print('6. Wyjście z programu')
 
-def wyjscie():
-    print('Koniec programu.')
-    sys.exit(0)
+    def __validate_decision(self, decision):
+        ALLOWED_DECISIONS = [e.value for e in ChoiceEnum]
+        if decision not in ALLOWED_DECISIONS:
+            raise Exception(f"Liczba {decision} jest niedozwolona!")
 
-
-def run_options(decision):
-    functions[decision]()
-
-
-functions = {
-    ChoiceEnum.ADDING_PATIENT.value: adding_a_patient,
-    ChoiceEnum.BOOK_APPOINTMENT.value: zaplanowanie_wizyty,
-    ChoiceEnum.BOOK_STUDY.value: zaplanowanie_badania,
-    ChoiceEnum.DOCTORS_AVAILABILITY.value: doctors_availability_managment,
-    ChoiceEnum.MEDICAL_PACKAGES.value: medical_packages,
-    ChoiceEnum.EXIT.value: wyjscie,
-}
-
-
-def print_options():
-    print('1. Dodaj pacjenta')
-    print('2. Zaplanuj wizyte')
-    print('3. Zaplanuj badanie')
-    print('4. Zarządzanie dostępnością lekarzy')
-    print('5. Wybierz pakiet medyczny')
-    print('6. Wyjście z programu')
-
-
-def validate_decision(decision):
-    ALLOWED_DECISIONS = [e.value for e in ChoiceEnum]
-    if decision not in ALLOWED_DECISIONS:
-        raise Exception(f"Liczba {decision} jest niedozwolona!")
-
-
-def run_menu():
-    while True:
-        print_options()
-        decision = int(input('Wybierz funkcje dla admina: '))
-        validate_decision(decision)
-        run_options(decision)
+    def __run_menu(self):
+        while True:
+            self.__print_options()
+            decision = int(input('Wybierz funkcje dla admina: '))
+            self.__validate_decision(decision)
+            self.__run_options(decision)

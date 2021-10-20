@@ -51,11 +51,3 @@ class UserRepository:
             user_choice = int(input('Wybierz jedną z opcji: '))
             validate_decision(user_choice)
             execute_decision(user_choice)
-        else:
-            print('Musisz mieć konto administratora, aby dodać użytkownika.')
-
-
-# TODO Remove below tests
-doctor = Doctor('Doctor', 'Quinn', 'a', 'b', 'c', 'd', 'e',
-                'f', 'g', 'h', 'i', 'j', 's', 'a', 'a', 'a', 'a')
-UserRepository(doctor).add_user()
