@@ -79,9 +79,3 @@ class User:
     def display_doctors_availability(self):
         # TODO implement doctors availability list
         pass
-
-
-
-
-
-

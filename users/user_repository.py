@@ -1,6 +1,7 @@
 from enum import Enum
 
-from user_classes.admin_user import Admin
+from users.user_classes.class_doctor import Doctor
+from users.user_classes.class_receptionist import Receptionist
 
 
 class UserChoiceEnum(Enum):
@@ -45,13 +46,16 @@ class UserRepository:
             }
             functions[decision]()
 
-        if isinstance(self.current_user, Admin):
+        if isinstance(self.current_user, (Doctor, Receptionist)):
             print_options()
             user_choice = int(input('Wybierz jedną z opcji: '))
             validate_decision(user_choice)
             execute_decision(user_choice)
+        else:
+            print('Musisz mieć konto administratora, aby dodać użytkownika.')
 
 
 # TODO Remove below tests
-admin_user = Admin('a', 'b', 1, 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l')
-UserRepository(admin_user).add_user()
+doctor = Doctor('Doctor', 'Quinn', 'a', 'b', 'c', 'd', 'e',
+                'f', 'g', 'h', 'i', 'j', 's', 'a', 'a', 'a', 'a')
+UserRepository(doctor).add_user()
