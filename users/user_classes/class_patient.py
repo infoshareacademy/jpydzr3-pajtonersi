@@ -2,8 +2,33 @@ from users.user_classes.class_user import User
 
 
 class Patient(User):
-    def __init__(self, first_name: str, last_name: str, login: str, password: str, pesel: int, gender: str, phone_no: str, email: str, street: str, city: str, zip_code: str, is_active: str, package: str):
-        super().__init__(self, first_name, last_name, login, password, pesel, gender, phone_no, email, street, city, zip_code, is_active)
+    def __init__(self,
+                 first_name: str,
+                 last_name: str,
+                 login: str,
+                 password: str,
+                 pesel: int,
+                 gender: str,
+                 phone_no: str,
+                 email: str,
+                 street: str,
+                 city: str,
+                 zip_code: str,
+                 is_active: str,
+                 package: str):
+        super().__init__(self,
+                         first_name,
+                         last_name,
+                         login,
+                         password,
+                         pesel,
+                         gender,
+                         phone_no,
+                         email,
+                         street,
+                         city,
+                         zip_code,
+                         is_active)
         self.package = package
 
     def change_password(self):
