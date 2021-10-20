@@ -3,10 +3,7 @@ from users.user_classes.class_patient import Patient
 from users.user_classes.class_doctor import Doctor
 
 # TODO Remove below list when tests are over and reformat code
-dummy_user_list = [Patient('Jarek', 'Majka', 1, 'male', 'street', 'city', 'post-code',
-                           'phone number', 'email', 'active account', 'top-tier'),
-                   Doctor('Doctor', 'Quinn', 2, 'female', 'street', 'city', 'post-code', 'phone number', 'email',
-                          'active', 'today', 'general medic', 'doctor', 'general', 'here')]
+dummy_user_list = [Patient('Jarek', 'Majka', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k')]
 
 
 class AuthenticateUser:
