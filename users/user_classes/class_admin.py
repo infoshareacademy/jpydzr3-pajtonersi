@@ -1,12 +1,9 @@
-from users.user_classes.base_user import User
+from users.user_classes.class_user import User
 
 
 class Admin(User):
-    def __init__(self, first_name: str, last_name: str, pesel: int, gender: str, address: str, city: str,
-                 postal_code: str, phone_no: str, email: str,
-                 account_status: str, hire_date: str, position: str, function: str):
-        super().__init__(first_name, last_name, pesel, gender, address,
-                         city, postal_code, phone_no, email, account_status)
+    def __init__(self, first_name: str, last_name: str, login: str, password: str, pesel: int, gender: str, phone_no: str, email: str, street: str, city: str, zip_code: str, is_active: str, hire_date: str, position: str, function: str):
+        super().__init__(self, first_name, last_name, login, password, pesel, gender, phone_no, email, street, city, zip_code, is_active)
         self.hire_date = hire_date
         self.position = position
         self.function = function
