@@ -1,19 +1,21 @@
 class User:
     idx_increment = 1
 
-    def __init__(self,
-                 first_name: str,
-                 last_name: str,
-                 login: str,
-                 password: str,
-                 pesel: int,
-                 gender: str,
-                 phone_no: str,
-                 email: str,
-                 street: str,
-                 city: str,
-                 zip_code: str,
-                 is_active: str):
+    def __init__(
+            self,
+            first_name: str,
+            last_name: str,
+            login: str,
+            password: str,
+            pesel: int,
+            gender: str,
+            phone_no: str,
+            email: str,
+            street: str,
+            city: str,
+            zip_code: str,
+            is_active: str
+    ):
 
         self.user_idx = User.idx_increment
         self.first_name = first_name
