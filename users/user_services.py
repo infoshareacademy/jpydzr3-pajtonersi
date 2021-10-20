@@ -1,5 +1,5 @@
 from users.authenticate_user import AuthenticateUser
-from users.user_classes.admin_user import Admin
+from users.user_classes.class_admin import Admin
 from users.user_classes.class_patient import Patient
 from users.user_menus.admin_menu import run_menu
 
