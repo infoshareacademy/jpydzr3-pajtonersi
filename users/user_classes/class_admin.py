@@ -18,8 +18,8 @@ class Admin(User):
                  hire_date: str,
                  position: str,
                  function: str):
-        super().__init__(self,
-                         first_name,
+
+        super().__init__(first_name,
                          last_name,
                          login,
                          password,
@@ -31,6 +31,7 @@ class Admin(User):
                          city,
                          zip_code,
                          is_active)
+
         self.hire_date = hire_date
         self.position = position
         self.function = function

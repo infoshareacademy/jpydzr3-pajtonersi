@@ -20,6 +20,7 @@ class Doctor(Admin):
                  function: str,
                  specialty: str,
                  location: str):
+
         super().__init__(first_name,
                          last_name,
                          login,
@@ -35,6 +36,7 @@ class Doctor(Admin):
                          hire_date,
                          position,
                          function)
+
         self.specialty = specialty
         self.location = location
 

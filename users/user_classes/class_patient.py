@@ -16,8 +16,8 @@ class Patient(User):
                  zip_code: str,
                  is_active: str,
                  package: str):
-        super().__init__(self,
-                         first_name,
+
+        super().__init__(first_name,
                          last_name,
                          login,
                          password,
@@ -29,6 +29,7 @@ class Patient(User):
                          city,
                          zip_code,
                          is_active)
+
         self.package = package
 
     def change_password(self):

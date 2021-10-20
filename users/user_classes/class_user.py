@@ -14,6 +14,7 @@ class User:
                  city: str,
                  zip_code: str,
                  is_active: str):
+
         self.user_idx = User.idx_increment
         self.first_name = first_name
         self.last_name = last_name

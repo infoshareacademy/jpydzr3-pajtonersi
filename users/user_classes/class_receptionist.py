@@ -2,8 +2,6 @@ from users.user_classes.class_admin import Admin
 
 
 class Receptionist(Admin):
-    number = 0
-
     def __init__(self,
                  first_name: str,
                  last_name: str,
@@ -20,6 +18,7 @@ class Receptionist(Admin):
                  hire_date: str,
                  position: str,
                  function: str):
+
         super().__init__(first_name,
                          last_name,
                          login,
