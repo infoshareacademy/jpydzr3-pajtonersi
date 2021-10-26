@@ -33,6 +33,9 @@ class UserRepository:
         def add_receptionist():
             # TODO Implement function
             print('Creating a receptionist')
+            first_name = input('Podaj imię: ')
+            last_name = input('Podaj nazwisko')
+
 
         def add_patient():
             # TODO Implement function

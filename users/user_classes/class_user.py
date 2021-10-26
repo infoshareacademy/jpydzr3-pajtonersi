@@ -5,7 +5,6 @@ class User:
             self,
             first_name: str,
             last_name: str,
-            login: str,
             password: str,
             pesel: int,
             gender: str,
@@ -20,7 +19,6 @@ class User:
         self.user_idx = User.idx_increment
         self.first_name = first_name
         self.last_name = last_name
-        self.login = login
         self.password = password
         self.pesel = pesel
         self.gender = gender
