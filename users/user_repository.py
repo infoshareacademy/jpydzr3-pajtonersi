@@ -28,14 +28,12 @@ class UserRepository:
 
         def add_doctor():
             # TODO Implement function
+            Doctor()
             print('Creating a doc')
 
         def add_receptionist():
             # TODO Implement function
             print('Creating a receptionist')
-            first_name = input('Podaj imię: ')
-            last_name = input('Podaj nazwisko')
-
 
         def add_patient():
             # TODO Implement function

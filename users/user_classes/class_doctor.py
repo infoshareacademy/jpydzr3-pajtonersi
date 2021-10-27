@@ -6,7 +6,6 @@ class Doctor(Admin):
             self,
             first_name: str,
             last_name: str,
-            login: str,
             password: str,
             pesel: int,
             gender: str,
@@ -26,7 +25,6 @@ class Doctor(Admin):
         super().__init__(
             first_name,
             last_name,
-            login,
             password,
             pesel,
             gender,
