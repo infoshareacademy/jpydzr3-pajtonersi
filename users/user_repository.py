@@ -28,7 +28,6 @@ class UserRepository:
 
         def add_doctor():
             # TODO Implement function
-            Doctor()
             print('Creating a doc')
 
         def add_receptionist():
