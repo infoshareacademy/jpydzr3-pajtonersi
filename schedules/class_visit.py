@@ -9,3 +9,13 @@ class Visit:
         self.time = time
         self.patient = patient
         self.doctor = doctor
+        self._notes = None
+
+    @property
+    def notes(self) -> str:
+        if self.notes:
+            return self._notes
+
+    @notes.setter
+    def notes(self, value) -> None:
+        self._notes = value
