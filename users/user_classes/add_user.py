@@ -20,28 +20,9 @@ def add_user(self):
         position = input('Podaj stanowisko pracownicze lekarza: ')
         specialty = input('Podaj specjalizację lekarza: ')
         location = input('Podaj lokalizację, w której przyjmuje lekarz: ')
-        # return Doctor(
-        #     first_name,
-        #     last_name,
-        #     password,
-        #     pesel,
-        #     gender,
-        #     phone_no,
-        #     email,
-        #     street,
-        #     city,
-        #     zip_code,
-        #     is_active,
-        #     hire_date,
-        #     position,
-        #     specialty,
-        #     location
-        # )
 
         doctor = Doctor(first_name, last_name, password, pesel, gender, phone_no, email, street, city, zip_code, is_active, hire_date, position, specialty, location)
-        print(vars(doctor))
-
-    doctor_creation()
+        return doctor
 
     def receptionist_creation():
         first_name = input('Podaj imię recepcjonisty: ')
@@ -57,26 +38,9 @@ def add_user(self):
         is_active = input('Podaj status konta recepcjonisty: ')
         hire_date = input('Podaj datę zatrudnienia recepcjonisty w placówce medycznej: ')
         position = input('Podaj stanowisko pracownicze recepcjonisty: ')
-        # return Receptionist(
-        #     first_name,
-        #     last_name,
-        #     password,
-        #     pesel,
-        #     gender,
-        #     phone_no,
-        #     email,
-        #     street,
-        #     city,
-        #     zip_code,
-        #     is_active,
-        #     hire_date,
-        #     position
-        # )
 
         receptionist = Receptionist(first_name, last_name, password, pesel, gender, phone_no, email, street, city, zip_code, is_active, hire_date, position)
-        print(vars(receptionist))
-
-    receptionist_creation()
+        return receptionist
 
     def patient_creation():
         first_name = input('Podaj imię pacjenta: ')
@@ -91,25 +55,12 @@ def add_user(self):
         zip_code = input('Podaj adres zamieszkania pacjenta (kod pocztowy): ')
         is_active = input('Podaj status konta pacjenta: ')
         package = input('Podaj pakiet medyczny pacjenta: ')
-        # return Patient(
-        #     first_name,
-        #     last_name,
-        #     password,
-        #     pesel,
-        #     gender,
-        #     phone_no,
-        #     email,
-        #     street,
-        #     city,
-        #     zip_code,
-        #     is_active,
-        #     package
-        # )
 
         patient = Patient(first_name, last_name, password, pesel, gender, phone_no, email, street, city, zip_code, is_active, package)
-        print(vars(patient))
+        return patient
 
-    patient_creation()
 
-add_user('cos')
+
+
+
 
