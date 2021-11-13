@@ -6,7 +6,6 @@ class Receptionist(Admin):
             self,
             first_name: str,
             last_name: str,
-            login: str,
             password: str,
             pesel: int,
             gender: str,
@@ -17,14 +16,12 @@ class Receptionist(Admin):
             zip_code: str,
             is_active: str,
             hire_date: str,
-            position: str,
-            function: str
+            position: str
     ):
 
         super().__init__(
             first_name,
             last_name,
-            login,
             password,
             pesel,
             gender,
@@ -35,8 +32,7 @@ class Receptionist(Admin):
             zip_code,
             is_active,
             hire_date,
-            position,
-            function
+            position
         )
 
     def add_new_patient(self):

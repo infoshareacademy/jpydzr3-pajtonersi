@@ -6,7 +6,6 @@ class Admin(User):
             self,
             first_name: str,
             last_name: str,
-            login: str,
             password: str,
             pesel: int,
             gender: str,
@@ -17,14 +16,12 @@ class Admin(User):
             zip_code: str,
             is_active: str,
             hire_date: str,
-            position: str,
-            function: str
+            position: str
     ):
 
         super().__init__(
             first_name,
             last_name,
-            login,
             password,
             pesel,
             gender,
@@ -38,14 +35,13 @@ class Admin(User):
 
         self.hire_date = hire_date
         self.position = position
-        self.function = function
 
     def display_patient_list(self):
         # TODO implement patient list display
         pass
 
     def add_user(self):
-        # TODO implement new user creation
+        # TODO this function to be moved to another file
         pass
 
     def edit_user(self):
