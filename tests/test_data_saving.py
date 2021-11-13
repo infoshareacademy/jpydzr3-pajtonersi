@@ -30,5 +30,3 @@ def test_save_receptionist():
     with open("receptionist_datebase.json", "r") as file:
         result = file.read()
         assert(expected == result)
-
-
