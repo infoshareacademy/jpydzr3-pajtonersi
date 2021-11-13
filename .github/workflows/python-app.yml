@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: PAJ-*
+    branches: [ feature-PAJ-* ]
   pull_request:
-    branches: PAJ-*
+    branches: [ feature-PAJ-*]
 
 jobs:
   build:
