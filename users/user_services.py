@@ -1,7 +1,8 @@
 from users.authenticate_user import AuthenticateUser
-from users.user_classes.class_admin import Admin
+from users.user_classes.class_doctor import Doctor
 from users.user_classes.class_patient import Patient
-from users.user_menus.admin_menu import run_menu
+from users.user_classes.class_receptionist import Receptionist
+from users.user_menus.admin_menu import AdminMenu
 
 
 class UserServices:
@@ -9,6 +10,7 @@ class UserServices:
         self.__user = self.set_user()
         self.print_menu(self.get_user())
 
+    # TODO Switch to @property decorator
     def set_user(self) -> object:
         """Setter for __user attribute"""
         def authenticated_user() -> object:
@@ -21,7 +23,7 @@ class UserServices:
         return self.__user
 
     def print_menu(self, user):
-        if isinstance(user, Admin):
-            run_menu()
+        if isinstance(user, (Doctor, Receptionist)):
+            AdminMenu(user)
         elif isinstance(user, Patient):
             print('It\'s a Patient')

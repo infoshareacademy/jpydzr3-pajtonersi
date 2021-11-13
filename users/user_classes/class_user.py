@@ -33,14 +33,12 @@ class User:
 
     @property
     def username(self):
-        print('getting value...')
         if not self._username:
             return self.first_name + '.' + self.last_name
         return self._username
 
     @username.setter
     def username(self, value):
-        print('setting value...')
         self._username = value
 
     def password_change(self, new_password: str) -> None:
@@ -77,9 +75,3 @@ class User:
     def display_doctors_availability(self):
         # TODO implement doctors availability list
         pass
-
-
-
-
-
-
