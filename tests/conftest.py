@@ -3,6 +3,7 @@ from users.user_classes.class_doctor import Doctor
 from users.user_classes.class_patient import Patient
 from users.user_classes.class_receptionist import Receptionist
 
+
 @pytest.fixture
 def doctor1():
     doc1 = Doctor('Doctor',
@@ -22,6 +23,7 @@ def doctor1():
                   'a'
                 )
     return doc1
+
 
 @pytest.fixture
 def doctor2():
@@ -43,6 +45,7 @@ def doctor2():
                 )
     return doc2
 
+
 @pytest.fixture
 def patient1():
     pat1 = Patient('Patient',
@@ -59,6 +62,7 @@ def patient1():
                     'a'
                 )
     return pat1
+
 
 @pytest.fixture
 def receptionist1():
@@ -77,3 +81,10 @@ def receptionist1():
                         'a'
                     )
     return rec1
+
+
+@pytest.fixture
+def login_information():
+    login = 'Jarek.Majka'
+    password = 'a'
+    return [login, password]
