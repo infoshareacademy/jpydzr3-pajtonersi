@@ -1,20 +1,26 @@
-from users.authenticate_user import AuthenticateUser, InputProvider
+from users.authenticate_user import AuthenticateUser
+import unittest
+from unittest.mock import patch
 
 
-class MockInputProvider(InputProvider):
-    def __init__(self, inputs):
-        self.inputs = inputs
-        self.index = 0
+class Mock:
+    login = 'Jarek.Majka'
+    password = 'a'
+    inputs = [login, password]
+    index = 0
 
-    def provide_input(self, text):
-        result = self.inputs[self.index]
-        self.index = self.index + 1
+    @classmethod
+    def provide_input(cls, text):
+        result = Mock.inputs[Mock.index]
+        Mock.index += 1
         return result
 
 
-def test_credentials_log_in(login_information):
-    result = AuthenticateUser.log_in(MockInputProvider(login_information))
-    assert result.username == login_information.login
-    assert result.password == login_information.password
-
-
+class TestAuthenticateUser(unittest.TestCase):
+    @patch('users.authenticate_user.InputWrapper', wraps=Mock)
+    def test_credentials_log_in(self, mock_class):
+        login = 'Jarek.Majka'
+        password = 'a'
+        result = AuthenticateUser.log_in()
+        assert result.username == login
+        assert result.password == password

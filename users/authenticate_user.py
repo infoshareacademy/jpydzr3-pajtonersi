@@ -6,13 +6,9 @@ from users.user_classes.class_doctor import Doctor
 dummy_user_list = [Patient('Jarek', 'Majka', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j')]
 
 
-class InputProvider:
-    def provide_input(text):
-        raise NotImplemented("This is abstract function do not use it")
-
-
-class RealInputProvider(InputProvider):
-    def provide_input(text):
+class InputWrapper:
+    @classmethod
+    def provide_input(cls, text):
         return input(text)
 
 
@@ -21,7 +17,7 @@ class AuthenticateUser:
         self.__user = self.log_in()
 
     @staticmethod
-    def log_in(input_provider=RealInputProvider()) -> object:
+    def log_in() -> object:
         """
         Checks the user name and password untill correct data provided.
         :return: logged in user
@@ -31,8 +27,8 @@ class AuthenticateUser:
             Accepts user input for Login and Password fields
             :return: Tuple of user credentials
             """
-            login = input_provider.provide_input('Podaj login: ')
-            password = input_provider.provide_input('Podaj hasło: ')
+            login = InputWrapper.provide_input('Podaj login: ')
+            password = InputWrapper.provide_input('Podaj hasło: ')
             return login, password
 
         def credentials_check(credentials: tuple) -> object:
