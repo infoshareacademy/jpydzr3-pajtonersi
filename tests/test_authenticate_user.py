@@ -14,4 +14,7 @@ class MockInputProvider(InputProvider):
 
 def test_credentials_log_in(login_information):
     result = AuthenticateUser.log_in(MockInputProvider(login_information))
-    assert result.username == login_information[0]
+    assert result.username == login_information.login
+    assert result.password == login_information.password
+
+

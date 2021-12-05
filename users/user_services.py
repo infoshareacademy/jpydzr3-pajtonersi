@@ -5,9 +5,9 @@ from users.user_menus.admin_menu import run_menu
 
 
 class UserServices:
-    def __init__(self):
-        self.__user = self.set_user()
-        self.print_menu(self.get_user())
+    def __init__(self, user):
+        self.user = user
+        self.print_menu()
 
     def set_user(self) -> object:
         """Setter for __user attribute"""
@@ -18,10 +18,10 @@ class UserServices:
 
     def get_user(self):
         """Getter for __user attribute"""
-        return self.__user
+        return self.user
 
-    def print_menu(self, user):
-        if isinstance(user, Admin):
+    def print_menu(self):
+        if isinstance(self.user, Admin):
             run_menu()
-        elif isinstance(user, Patient):
+        elif isinstance(self.user, Patient):
             print('It\'s a Patient')

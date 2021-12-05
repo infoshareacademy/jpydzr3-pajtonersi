@@ -2,6 +2,7 @@ import pytest
 from users.user_classes.class_doctor import Doctor
 from users.user_classes.class_patient import Patient
 from users.user_classes.class_receptionist import Receptionist
+from collections import namedtuple
 
 
 @pytest.fixture
@@ -85,6 +86,7 @@ def receptionist1():
 
 @pytest.fixture
 def login_information():
+    LoginInformation = namedtuple('LoginInformation', ['login', 'password'])
     login = 'Jarek.Majka'
     password = 'a'
-    return [login, password]
+    return LoginInformation(login, password)

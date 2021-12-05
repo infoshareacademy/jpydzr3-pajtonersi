@@ -67,8 +67,8 @@ def validate_decision(decision):
 
 
 def run_menu():
-    while True:
-        print_options()
-        decision = int(input('Wybierz funkcje dla admina: '))
-        validate_decision(decision)
-        run_options(decision)
+    # while True:
+    print_options()
+        # decision = int(input('Wybierz funkcje dla admina: '))
+        # validate_decision(decision)
+        # run_options(decision)
