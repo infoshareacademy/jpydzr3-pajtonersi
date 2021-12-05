@@ -6,12 +6,6 @@ from users.user_classes.class_doctor import Doctor
 dummy_user_list = [Patient('Jarek', 'Majka', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j')]
 
 
-class InputWrapper:
-    @classmethod
-    def provide_input(cls, text):
-        return input(text)
-
-
 class AuthenticateUser:
     def __init__(self):
         self.__user = self.log_in()
@@ -27,8 +21,8 @@ class AuthenticateUser:
             Accepts user input for Login and Password fields
             :return: Tuple of user credentials
             """
-            login = InputWrapper.provide_input('Podaj login: ')
-            password = InputWrapper.provide_input('Podaj hasło: ')
+            login = input('Podaj login: ')
+            password = input('Podaj hasło: ')
             return login, password
 
         def credentials_check(credentials: tuple) -> object:

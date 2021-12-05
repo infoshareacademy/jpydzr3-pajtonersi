@@ -17,7 +17,7 @@ class Mock:
 
 
 class TestAuthenticateUser(unittest.TestCase):
-    @patch('users.authenticate_user.InputWrapper', wraps=Mock)
+    @patch('users.authenticate_user.input', wraps=Mock.provide_input)
     def test_credentials_log_in(self, mock_class):
         login = 'Jarek.Majka'
         password = 'a'
